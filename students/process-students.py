@@ -11,7 +11,7 @@ with open('students.csv', 'r') as csvfile:
 	for row in csvreader:
 
 		dob = row[6]
-		row[8] = password_from_dob(dob)
+		row.append(password_from_dob(dob))
 		newrows.append(',' . join(row))
 
 newcsv = open('students-processed.csv', 'w')
