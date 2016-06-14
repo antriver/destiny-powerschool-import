@@ -3,8 +3,8 @@ import csv
 newrows = []
 
 def password_from_dob(dob):
-    dob = dob.replace('/', '')
-    return dob
+	dob = dob.replace('/', '')
+	return dob
 
 with open('students.csv', 'r') as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
@@ -12,7 +12,7 @@ with open('students.csv', 'r') as csvfile:
 
 		dob = row[6]
 		row[8] = password_from_dob(dob)
-        newrows.append(',' . join(row))
+		newrows.append(',' . join(row))
 
 newcsv = open('students-processed.csv', 'w')
 newcsv.write("\n" . join(newrows))
