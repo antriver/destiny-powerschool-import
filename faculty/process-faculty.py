@@ -3,9 +3,9 @@ import csv
 newrows = []
 
 def get_access_level(powerschoolID, school):
-	if powerschoolID == 55970 or powerschoolID == 53550:
+	if powerschoolID == "55970" or powerschoolID == "53550":
 		return "Library Assistant"
-	elif powerschoolID == 52950:
+	elif powerschoolID == "52950":
 		return "Library Administrator"
 	elif school == 111 or school == 112:
 		return "Teacher"
