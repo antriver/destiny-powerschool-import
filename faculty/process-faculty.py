@@ -17,12 +17,12 @@ with open('faculty.csv', 'r') as csvfile:
 	for row in csvreader:
 
 		powerschoolID = row[0]
-		active = row[4]
+		active = row[5]
 		access_level = get_access_level(powerschoolID, row[5])
 		row.append(access_level)
 
 		if active == '1' and powerschoolID and powerschoolID[:2] != '22' and powerschoolID[:2] != 'xx' and powerschoolID[:6] != 'xbatch' and len(powerschoolID) == 5:
-
+			print(row)
 			newrows.append(',' . join(row))
 
 newcsv = open('faculty-processed.csv', 'w')
