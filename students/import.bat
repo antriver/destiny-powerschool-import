@@ -2,7 +2,7 @@ E:
 
 cd E:\DestinyImport\students
 
-C:\Python34\python process-students.py
+python process-students.py
 
 cd E:\Follett\FSC-Destiny\fsc\bin\
 
