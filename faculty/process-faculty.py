@@ -2,13 +2,11 @@ import csv
 
 newrows = []
 
-def get_access_level(powerschoolID, school):
-	if powerschoolID == "55970" or powerschoolID == "53550":
+def get_access_level(title, school):
+	if title == "Library Assistant":
 		return "Library Assistant"
-	elif powerschoolID == "52950":
+	elif title == "Library Administrator":
 		return "Library Administrator"
-	elif school == 111 or school == 112:
-		return "Teacher"
 	else:
 		return "Staff"
 
@@ -17,8 +15,11 @@ with open('faculty.csv', 'r') as csvfile:
 	for row in csvreader:
 
 		powerschoolID = row[0]
+		title = row[4]
 		active = row[5]
-		access_level = get_access_level(powerschoolID, row[5])
+		school = row[6]
+
+		access_level = get_access_level(title, school)
 		row.append(access_level)
 
 		if active == '1' and powerschoolID and powerschoolID[:2] != '22' and powerschoolID[:2] != 'xx' and powerschoolID[:6] != 'xbatch' and len(powerschoolID) == 5:
