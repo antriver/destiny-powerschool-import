@@ -8,7 +8,7 @@ def get_access_level(title, school):
 	elif title == "Library Administrator":
 		return "Library Administrator"
 	else:
-		return "Staff"
+		return "Teacher"
 
 with open('faculty.csv', 'r') as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
