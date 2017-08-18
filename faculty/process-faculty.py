@@ -10,7 +10,7 @@ def get_access_level(title, school):
 	else:
 		return "Teacher"
 
-with open('faculty.csv', 'r') as csvfile:
+with open('faculty.csv', 'r', encoding="UTF-8") as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
 	for row in csvreader:
 

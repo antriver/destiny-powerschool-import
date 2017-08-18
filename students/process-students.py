@@ -6,7 +6,7 @@ def password_from_dob(dob):
 	dob = dob.replace('/', '')
 	return dob
 
-with open('students.csv', 'r') as csvfile:
+with open('students.csv', 'r', encoding="UTF-8") as csvfile:
 	csvreader = csv.reader(csvfile, delimiter=',')
 	for row in csvreader:
 
